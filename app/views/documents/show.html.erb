@@ -1,0 +1,21 @@
+
+<h1 class="document" >Antall Dokumenter: <%= number_of_documents %></h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Utsender:</th>
+				<th>Status:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @documents.belongs_to %></td>
+				<td><% @documents.document_status.find_each do |status| %>
+						<%=status.status.capitalize%>
+					<%end%>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
